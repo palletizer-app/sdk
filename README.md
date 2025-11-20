@@ -1,7 +1,7 @@
 # Palletizer Go SDK
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/palletizer-app/sdk.svg)](https://pkg.go.dev/github.com/palletizer-app/sdk)
-[![Go Report Card](https://goreportcard.com/badge/github.com/palletizer-app/sdk)](https://goreportcard.com/report/github.com/palletizer-app/sdk)
+[![Go Reference](https://pkg.go.dev/badge/github.com/palletizer-app/go-sdk.svg)](https://pkg.go.dev/github.com/palletizer-app/go-sdk)
+[![Go Report Card](https://goreportcard.com/badge/github.com/palletizer-app/go-sdk)](https://goreportcard.com/report/github.com/palletizer-app/go-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Optimize your warehouse operations with AI-powered 3D pallet packing.**
@@ -29,7 +29,7 @@ Official Go SDK for [Palletizer.app](https://palletizer.app) - The smartest way 
 ## 📦 Installation
 
 ```bash
-go get github.com/palletizer-app/sdk
+go get github.com/palletizer-app/go-sdk
 ```
 
 ## 🎯 Quick Start
@@ -42,7 +42,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/palletizer-app/sdk"
+    "github.com/palletizer-app/go-sdk"
 )
 
 func main() {
@@ -311,7 +311,7 @@ go test -cover
 ## 🆘 Support
 
 - **Email**: info@palletizer.app
-- **Issues**: https://github.com/palletizer-app/sdk/issues
+- **Issues**: https://github.com/palletizer-app/go-sdk/issues
 - **Website**: https://palletizer.app
 
 ## 🤝 Contributing
