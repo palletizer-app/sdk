@@ -62,7 +62,7 @@ func main() {
                 AllowRotation: true,
             },
         },
-        PalletConstraints: palletizer.StandardPallet(), // 40×72×48" pallet
+        PackingConstraints: palletizer.StandardPallet(), // 40×72×48" pallet
         PackingOptions: palletizer.PackingOptions{
             SupportPercentage: 80.0,
         },
@@ -123,7 +123,7 @@ request := &palletizer.PackingRequest{
             AllowRotation: false,
         },
     },
-    PalletConstraints: palletizer.StandardPallet(),
+    PackingConstraints: palletizer.StandardPallet(),
 }
 
 response, _ := client.Pack(context.Background(), request)
@@ -173,7 +173,7 @@ palletizer.StandardPallet()
 palletizer.StandardPallet4048()
 
 // Custom pallet
-palletizer.PalletConstraints{
+palletizer.PackingConstraints{
     MaxLength: palletizer.InchesToMM(48),
     MaxWidth:  palletizer.InchesToMM(40),
     MaxHeight: palletizer.InchesToMM(60),
@@ -276,7 +276,7 @@ if response.Error != "" {
 ```go
 type PackingRequest struct {
     Cartons           []Carton
-    PalletConstraints PalletConstraints
+    PackingConstraints PackingConstraints
     PackingOptions    PackingOptions
 }
 

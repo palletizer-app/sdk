@@ -18,7 +18,7 @@
 //	            AllowRotation: true,
 //	        },
 //	    },
-//	    PalletConstraints: palletizer.StandardPallet(),
+//	    PackingConstraints: palletizer.StandardPallet(),
 //	    PackingOptions: palletizer.PackingOptions{
 //	        SupportPercentage: 80.0,
 //	    },
@@ -88,8 +88,8 @@ type Carton struct {
 	AllowRotation bool    `json:"allow_rotation"` // whether carton can be rotated
 }
 
-// PalletConstraints defines the maximum dimensions and weight for a pallet
-type PalletConstraints struct {
+// PackingConstraints defines the maximum dimensions and weight for a pallet
+type PackingConstraints struct {
 	MaxLength float64 `json:"max_length"` // millimeters
 	MaxWidth  float64 `json:"max_width"`  // millimeters
 	MaxHeight float64 `json:"max_height"` // millimeters
@@ -103,9 +103,9 @@ type PackingOptions struct {
 
 // PackingRequest is the request sent to the Pack API
 type PackingRequest struct {
-	Cartons           []Carton          `json:"cartons"`
-	PalletConstraints PalletConstraints `json:"pallet_constraints"`
-	PackingOptions    PackingOptions    `json:"packing_options"`
+	Cartons            []Carton           `json:"cartons"`
+	PackingConstraints PackingConstraints `json:"packing_constraints"`
+	PackingOptions     PackingOptions     `json:"packing_options"`
 }
 
 // Point3D represents a 3D coordinate
@@ -221,8 +221,8 @@ func (c *Client) Pack(ctx context.Context, request *PackingRequest) (*PackingRes
 }
 
 // StandardPallet returns constraints for a standard 40x72x48 inch pallet (1500 lbs)
-func StandardPallet() PalletConstraints {
-	return PalletConstraints{
+func StandardPallet() PackingConstraints {
+	return PackingConstraints{
 		MaxLength: 1016.0,   // 40 inches
 		MaxWidth:  1828.8,   // 72 inches
 		MaxHeight: 1219.2,   // 48 inches
@@ -231,8 +231,8 @@ func StandardPallet() PalletConstraints {
 }
 
 // StandardPallet4048 returns constraints for a 40x48x48 inch pallet (1500 lbs)
-func StandardPallet4048() PalletConstraints {
-	return PalletConstraints{
+func StandardPallet4048() PackingConstraints {
+	return PackingConstraints{
 		MaxLength: 1016.0,   // 40 inches
 		MaxWidth:  1219.2,   // 48 inches
 		MaxHeight: 1219.2,   // 48 inches

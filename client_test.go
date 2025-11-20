@@ -91,7 +91,7 @@ func TestPack(t *testing.T) {
 				AllowRotation: true,
 			},
 		},
-		PalletConstraints: StandardPallet(),
+		PackingConstraints: StandardPallet(),
 		PackingOptions: PackingOptions{
 			SupportPercentage: 80.0,
 		},
